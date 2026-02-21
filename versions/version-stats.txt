@@ -87,6 +87,7 @@ iOS 18.7      1132 total keys  (  +1 new)
 iOS 26.0      1174 total keys  ( +42 new)
 iOS 26.1      1174 total keys
 iOS 26.2      1179 total keys  (  +5 new)
+iOS 26.3      1179 total keys
 
 Removed Keys by Version:
 ------------------------------------------------------------

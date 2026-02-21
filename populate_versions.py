@@ -101,7 +101,7 @@ def generate_keys_versions():
     versions_dir = Path('versions')
     if versions_dir.exists():
         # Exclude version-stats.txt and version-sim.txt from the glob results
-        version_files = sorted([f for f in versions_dir.glob('version-*.txt') 
+        version_files = sorted([f for f in versions_dir.glob('version-*.txt')
                               if f.name not in ['version-stats.txt', 'version-sim.txt']])
     else:
         version_files = []
