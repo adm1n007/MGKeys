@@ -1,8 +1,8 @@
 keys_legacy = {
-    "/4LCTfMhvzuiK6b557ir5Q": "pearl-calibration-data",
-    "/8aKho3RQEvq1PxPnN2ziQ": "MetalCapability",
     "+vrh8Iw5J9DJaSEy7n+iiw": "wlan.nan.enabled",
     "+zD41v0XRR72ItZHfisZuQ": "PTPLargeFilesCapability",
+    "/4LCTfMhvzuiK6b557ir5Q": "pearl-calibration-data",
+    "/8aKho3RQEvq1PxPnN2ziQ": "MetalCapability",
     "04zgp3uYWXAEZCOV0wrVXQ": "hardware-detents",
     "0kE9ab+OYAMDszxCc5nNTw": "MusicStoreCapability",
     "0tONs5niVymiPVtijnw9hg": "CallerIDCapability",

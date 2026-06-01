@@ -14,6 +14,7 @@ On failure, prints:
 from __future__ import annotations
 
 import ast
+import subprocess
 import sys
 from pathlib import Path
 
@@ -31,58 +32,19 @@ def read_set(path: Path) -> set[str]:
     return {line.strip() for line in path.read_text().splitlines() if line.strip()}
 
 
-def read_ordered_lines(path: Path) -> list[str]:
-    if not path.exists():
+def shell_sort(values: list[str], *, fold_case: bool = True, unique: bool = False) -> list[str]:
+    if not values:
         return []
-    return [line.strip() for line in path.read_text().splitlines() if line.strip()]
 
+    args = ["sort"]
+    if fold_case:
+        args.append("-f")
+    if unique:
+        args.append("-u")
 
-def ordered_unique(values: list[str]) -> list[str]:
-    seen: set[str] = set()
-    output: list[str] = []
-    for value in values:
-        if value in seen:
-            continue
-        seen.add(value)
-        output.append(value)
-    return output
-
-
-def insertion_index_case_insensitive(ordered_values: list[str], new_value: str) -> int:
-    new_key = new_value.lower()
-    sorted_projection = sorted(ordered_values, key=str.lower)
-
-    anchor: str | None = None
-    for value in sorted_projection:
-        if value.lower() > new_key:
-            anchor = value
-            break
-
-    if anchor is None:
-        return len(ordered_values)
-
-    for i, value in enumerate(ordered_values):
-        if value == anchor:
-            return i
-
-    return len(ordered_values)
-
-
-def insert_into_ordered_dict(values: dict[str, str], key: str, value: str) -> None:
-    if key in values:
-        return
-
-    items = list(values.items())
-    keys = [k for k, _ in items]
-    index = insertion_index_case_insensitive(keys, key)
-    items.insert(index, (key, value))
-    values.clear()
-    values.update(items)
-
-
-def insert_into_ordered_list(values: list[str], value: str) -> None:
-    index = insertion_index_case_insensitive(values, value)
-    values.insert(index, value)
+    payload = "".join(f"{value}\n" for value in values)
+    result = subprocess.run(args, input=payload, text=True, capture_output=True, check=True)
+    return [line for line in result.stdout.splitlines() if line]
 
 
 def load_dict(path: Path, variable_name: str) -> dict[str, str]:
@@ -116,8 +78,11 @@ def load_discovered(path: Path) -> dict[str, str]:
 
 
 def write_dict(path: Path, variable_name: str, values: dict[str, str]) -> bool:
+    ordered_keys = shell_sort(list(values.keys()), fold_case=True, unique=True)
+
     output_lines = [f"{variable_name} = {{"]
-    for hash_value, key_name in values.items():
+    for hash_value in ordered_keys:
+        key_name = values[hash_value]
         escaped_hash = hash_value.replace("\\", "\\\\").replace('"', '\\"')
         escaped_key = key_name.replace("\\", "\\\\").replace('"', '\\"')
         output_lines.append(f'    "{escaped_hash}": "{escaped_key}",')
@@ -142,8 +107,7 @@ def main() -> int:
             raise FileNotFoundError(f"{DEOBFUSCATED_LEGACY_FILE} not found")
 
         hashes = read_set(HASHES_FILE)
-        legacy_hashes_ordered = ordered_unique(read_ordered_lines(LEGACY_FILE))
-        legacy_hashes_lookup = set(legacy_hashes_ordered)
+        legacy_hashes = read_set(LEGACY_FILE)
         existing = load_dict(DEOBFUSCATED_FILE, "keys")
         existing_legacy = load_dict(DEOBFUSCATED_LEGACY_FILE, "keys_legacy")
         mapped = load_discovered(DISCOVER_FILE)
@@ -157,7 +121,7 @@ def main() -> int:
                 pending_additions.append((hash_value, key_name))
 
         for hash_value, key_name in sorted(pending_additions, key=lambda item: item[0].lower()):
-            insert_into_ordered_dict(existing, hash_value, key_name)
+            existing[hash_value] = key_name
             added += 1
 
         missing_known = {hash_value for hash_value in existing if hash_value not in hashes}
@@ -168,17 +132,15 @@ def main() -> int:
         for hash_value in moved_candidates_in_order:
             key_name = existing.pop(hash_value, None)
             if key_name is not None and hash_value not in existing_legacy:
-                insert_into_ordered_dict(existing_legacy, hash_value, key_name)
+                existing_legacy[hash_value] = key_name
 
-        legacy_before = len(legacy_hashes_lookup)
-        for hash_value in moved_candidates_in_order:
-            if hash_value not in legacy_hashes_lookup:
-                insert_into_ordered_list(legacy_hashes_ordered, hash_value)
-                legacy_hashes_lookup.add(hash_value)
+        legacy_before = len(legacy_hashes)
+        legacy_hashes.update(missing_known)
 
-        legacy_added = len(legacy_hashes_lookup) - legacy_before
+        legacy_added = len(legacy_hashes) - legacy_before
 
-        legacy_target_content = "".join(f"{value}\n" for value in legacy_hashes_ordered)
+        legacy_ordered = shell_sort(list(legacy_hashes), fold_case=True, unique=True)
+        legacy_target_content = "".join(f"{value}\n" for value in legacy_ordered)
         legacy_current_content = LEGACY_FILE.read_text() if LEGACY_FILE.exists() else ""
         legacy_changed = legacy_current_content != legacy_target_content
         if legacy_changed:
