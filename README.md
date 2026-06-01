@@ -4,7 +4,7 @@ Mapping of the obfuscated keys (or questions) used by iOS's MobileGestalt to the
 
 It is our job to de-obfuscate them all.
 
-The keys are currently based on iOS 26.3.
+The keys are currently based on iOS 26.4.
 
 ## Patterns
 
@@ -48,12 +48,19 @@ All scripts support `--help` flags for detailed usage information. Run any scrip
 Use `discover-version.sh` to automate downloading an IPSW, extracting `libMobileGestalt.dylib`, and running discovery:
 
 ```bash
-./discover-version.sh <DEVICE> <VERSION_OR_BUILD> [ARCH] [--remote-extract]
+./discover-version.sh <DEVICE> <VERSION_OR_BUILD> [ARCH] [--remote-extract] [--post-process-only]
 
 # Examples
 ./discover-version.sh iPhone15,2 16.5
 ./discover-version.sh iPhone15,2 20F66 --remote-extract
+./discover-version.sh iPhone15,2 26.4 --post-process-only
 ```
+
+`--post-process-only` skips IPSW extraction and key discovery, and only runs post-processing steps on current local artifacts. This is useful when you want to validate or rerun:
+- `versions/version-<VERSION>.txt` generation from `hashes.txt`
+- syncing `discover-obfuscated-mapped.txt` into `deobfuscated.py`
+- syncing known missing hashes into `hashes_legacy.txt`
+- `gen_mapping.py` and `populate_versions.py`
 
 ### Version Hash Extraction
 

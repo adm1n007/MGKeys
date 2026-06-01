@@ -34,8 +34,8 @@ fi
 
 echo "Extracted $(wc -l < "$TEMP_FILE" | tr -d ' ') potential hashes"
 # Filter false positives and sort case-insensitively
-if [ -f false-positives.txt ]; then
-  grep -v -f false-positives.txt "$TEMP_FILE" | sort -f > "$OUT"
+if [ -f "false-positives.txt" ]; then
+  grep -v -f "false-positives.txt" "$TEMP_FILE" | sort -f > "$OUT"
 else
   echo "Note: false-positives.txt not found; skipping filter"
   sort -f "$TEMP_FILE" > "$OUT"

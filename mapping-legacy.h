@@ -1,7 +1,7 @@
 #include "struct.h"
 
-// Total: 200 keys
-// Deobfuscated: 183 keys (91.5%)
+// Total: 201 keys
+// Deobfuscated: 184 keys (91.54%)
 // Total gestalt keys: 169 keys
 // Deobfuscated gestalt: 164 keys (97.04%)
 // Unexplored: 5 keys
@@ -116,6 +116,7 @@ static const struct tKeyMapping keyMappingTableLegacy[] = {
     "kZxeKVJr1te4KIfsML7vXw", NULL, // non-gestalt-key, , iOS 8.0+ (removed in 10.0)
     "L8PQcP8OFWzr3NCfs1QrrQ", NULL, // non-gestalt-key, IODeviceTree:/product/audio, starts with s, 061e/gd5kFdZwwe1G2qXFQ, iOS 13.0+ (removed in 14.0)
     "ld2eewXs5StVwdRtwYT8sw", "PersonalHotspotCapability", // Simulator
+    "ldJQht23DQY8SUXKJhUvPw", "use-syncdbv", // non-gestalt-key // iOS 16.0+ (removed in 26.4)
     "Lfx1lF4WO7V2u7mKQTQXGA", "LocalizedDeviceNameString", // Simulator
     "lJMvqLXN5hYqj0ulelo/1Q", "SIMCapability", // Simulator
     "lLP6eSW9thhnfm1jBFX21Q", "ScreenDimensionsCapability", // Simulator

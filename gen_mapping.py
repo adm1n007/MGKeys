@@ -27,6 +27,17 @@ USE_MAPPING_AS_SOURCE = False
 
 potfile_content = ''
 
+
+def load_hash_set(path: Path) -> set[str]:
+    """Load non-empty hash lines from a file if it exists."""
+    if not path.exists():
+        return set()
+    with path.open('r') as f:
+        return {line.strip() for line in f if line.strip()}
+
+
+LEGACY_HASHES = load_hash_set(HASHES_LEGACY_FILE)
+
 # Load all version files to compute ranges
 def load_version_data() -> Dict[str, List[str]]:
     """Load all version files and return a dict mapping hash -> list of versions where it appears."""
@@ -246,6 +257,10 @@ def generate_mapping(
                 if not process_key(obfuscated_key, keys_map, mapping, only_gestalt, stats, add_version):
                     continue
             else:
+                # Skip warning when generating main mappings for keys intentionally
+                # tracked in hashes_legacy.txt.
+                if hashes_path == HASHES_FILE and obfuscated_key in LEGACY_HASHES:
+                    continue
                 print(f'Warning: {obfuscated_key} not found in {hashes_path}')
 
     # Sort mapping

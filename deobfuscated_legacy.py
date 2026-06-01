@@ -98,6 +98,7 @@ keys_legacy = {
     "kTX3vfIkwQHB9e90qFxlDg": "PhotoStreamCapability",
     "KXulcwjWtgzrg+u8qILKBQ": "LocationServicesCapability",
     "ld2eewXs5StVwdRtwYT8sw": "PersonalHotspotCapability",
+    "ldJQht23DQY8SUXKJhUvPw": "use-syncdbv",
     "Lfx1lF4WO7V2u7mKQTQXGA": "LocalizedDeviceNameString",
     "lJMvqLXN5hYqj0ulelo/1Q": "SIMCapability",
     "lLP6eSW9thhnfm1jBFX21Q": "ScreenDimensionsCapability",
@@ -181,5 +182,5 @@ keys_legacy = {
     "ziO64HFBPR9QpsOGnkVjJQ": "HiDPICapability",
     "zJUWenIp94snlzBD1cub3g": "function-button_halleffect",
     "zPSNnYDFk+x5ebOtenb3Eg": "auto-focus",
-    "Zv5zA+LUuFETzfX5WTbnjA": "ARM64ExecutionCapability"
+    "Zv5zA+LUuFETzfX5WTbnjA": "ARM64ExecutionCapability",
 }
