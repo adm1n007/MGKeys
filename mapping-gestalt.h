@@ -1,8 +1,8 @@
 #include "struct.h"
 
-// Total: 919 keys
-// Deobfuscated: 916 keys (99.67%)
-// Unexplored: 3 keys
+// Total: 916 keys
+// Deobfuscated: 916 keys (100.0%)
+// Unexplored: 0 keys
 
 static const struct tKeyMapping keyMappingTable[] = {
     "+1TeoctsaQC55zwHZ6MESg", "ProductTypeDescForAudio", // iOS 26.0+
@@ -89,7 +89,6 @@ static const struct tKeyMapping keyMappingTable[] = {
     "4fT83+9coO3VAUnlxuOOcw", "SupportsEDUMU", // iOS 9.3+
     "4I0hOaR3n80379Vka7u+Xg", "volume-buttons", // iOS 7.0+
     "4Jfu4lqX8dzru4Z+ONQ1rQ", "PhotosPostEffectsCapability", // iOS 7.0+
-    "4KHWgupf+YDEaYOgLaS04g", NULL, // iOS 26.4+
     "4O2JWo6Aos5J8y3K3Yzhyg", "DataCenterRegionCode", // iOS 26.4+
     "4qfpxrvLtWillIHpIsVgMA", "SystemImageID", // iOS 11.0+
     "4RgFi8v1sfuhCZhRdQkxxQ", "FaceTimePhotosOptIn", // iOS 11.0+
@@ -440,7 +439,6 @@ static const struct tKeyMapping keyMappingTable[] = {
     "J1QHVh74Nnd6Rqyiq71/yw", "AVDDecodingRate", // iOS 16.0+
     "j39y4QUrP6cvZY8Pjyv64w", "PearlMotionDetectionCapability", // iOS 17.0+
     "j4dedPnpeXouudM1+j3dsQ", "IntegratedCircuitCardIdentifier", // iOS 7.0+
-    "j5MYSRG6J/NkDdtOKpt6zg", NULL, // iOS 26.4+
     "j8/Omm6s1lsmTDFsXjsBfA", "DeviceSupportsAlwaysOnTime", // iOS 13.0+
     "J912s3mVzhReVtPv4HwqNQ", "FaceTimeCameraRequiresFastSwitchOptions", // iOS 7.0+
     "j9Th5smJpdztHwc+i39zIg", "MarketingProductName", // iOS 9.1+
@@ -608,7 +606,6 @@ static const struct tKeyMapping keyMappingTable[] = {
     "og9DE42ZUHzzTiVpxwOmqw", "UnifiedGamingPerfLeveliPadTier1", // iOS 26.0+
     "ohnQBWkVQf2nu9Vr/9uLug", "DeviceSupports3DImagery", // iOS 7.0+
     "OHXV8ldryg9nrOCapcyDCQ", "ReceiveARCStreamOverAirPlayCapability", // iOS 15.0+
-    "OImuoRzP9vclh3eYueyRDg", NULL, // iOS 26.4+
     "oJGeec0N+MudCr0LsdtbHw", "MobileSubscriberNetworkCode", // iOS 7.0+
     "Oji6HRoPi7rH7HPdWVakuw", "HasInternalSettingsBundle", // iOS 7.0+
     "OjzOua0LkOegX7pQdgMksw", "main-screen-height", // iOS 7.0+

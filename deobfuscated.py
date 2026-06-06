@@ -114,6 +114,7 @@ keys = {
     "4JalTKSe5a9I+mb00ATvag": "display-boot-rotation",
     "4Jfu4lqX8dzru4Z+ONQ1rQ": "PhotosPostEffectsCapability",
     "4k6Wv56SWfITjzet+hIHMQ": "multi-touch",
+    "4KHWgupf+YDEaYOgLaS04g": "syncdbv-supported",
     "4O2JWo6Aos5J8y3K3Yzhyg": "DataCenterRegionCode",
     "4OThI5F+/uP2oXUpdDxGnw": "supports-burnin-mitigation",
     "4qfpxrvLtWillIHpIsVgMA": "SystemImageID",
