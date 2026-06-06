@@ -91,12 +91,6 @@ if [[ -n "$DEVICE" ]]; then
         exit 1
     fi
 
-    # Validate device identifier format (basic check)
-    if ! [[ "$DEVICE" =~ ^[A-Za-z]+[0-9]+,[0-9]+ ]]; then
-        echo "Warning: Device identifier '$DEVICE' may be invalid"
-        echo "Expected format: ModelName##,# (e.g., iPhone15,2)"
-    fi
-
     echo "Getting IPSW URL for $DEVICE..."
     if [[ -n "$BUILD" ]]; then
         URL=$(ipsw download ipsw --device "$DEVICE" --build "$BUILD" --urls 2>/dev/null | head -n 1)
