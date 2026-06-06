@@ -1,4 +1,5 @@
 from pathlib import Path
+import subprocess
 from typing import Dict, List, Tuple
 
 from deobfuscated import keys
@@ -21,11 +22,72 @@ MAPPING_GESTALT_LEGACY_FILE = Path('mapping-gestalt-legacy.h')
 TABLE_NAME = 'keyMappingTable'
 TABLE_LEGACY_NAME = 'keyMappingTableLegacy'
 POTFILE = Path('potfile')
+DEOBFUSCATED_FILE = Path('deobfuscated.py')
+DEOBFUSCATED_LEGACY_FILE = Path('deobfuscated_legacy.py')
+KEYS_DESC_FILE = Path('keys_desc.py')
 
 GEN_NON_GESTALT_KEY = True
 USE_MAPPING_AS_SOURCE = False
 
 potfile_content = ''
+
+
+def shell_sort(values: List[str], fold_case: bool = True, unique: bool = False) -> List[str]:
+    """Sort values using shell sort to match existing script behavior."""
+    if not values:
+        return []
+
+    args = ['sort']
+    if fold_case:
+        args.append('-f')
+    if unique:
+        args.append('-u')
+
+    payload = ''.join(f'{value}\n' for value in values)
+    result = subprocess.run(args, input=payload, text=True, capture_output=True, check=True)
+    return [line for line in result.stdout.splitlines() if line]
+
+
+def escape_py_string(value: str) -> str:
+    return value.replace('\\', '\\\\').replace('"', '\\"')
+
+
+def write_sorted_dict_file(path: Path, var_name: str, data: Dict[str, str]) -> None:
+    ordered_keys = shell_sort(list(data.keys()), fold_case=True, unique=True)
+    lines = [f'{var_name} = {{']
+    for key in ordered_keys:
+        value = data[key]
+        lines.append(f'    "{escape_py_string(key)}": "{escape_py_string(value)}",')
+    lines.append('}')
+    content = '\n'.join(lines) + '\n'
+    path.write_text(content)
+
+
+def write_sorted_keys_desc(path: Path) -> None:
+    ordered_unknown = shell_sort(list(unknown_keys_desc.keys()), fold_case=True, unique=True)
+    ordered_known = shell_sort([str(v) for v in known_keys_desc], fold_case=True, unique=True)
+
+    lines: List[str] = []
+    lines.append(f"NON_KEY_DESC = '{NON_KEY_DESC}'")
+    lines.append('')
+    lines.append('unknown_keys_desc = {')
+    for key in ordered_unknown:
+        value = unknown_keys_desc[key]
+        lines.append(f'    "{escape_py_string(key)}": "{escape_py_string(value)}",')
+    lines.append('}')
+    lines.append('')
+    lines.append('known_keys_desc = [')
+    for key in ordered_known:
+        lines.append(f'    "{escape_py_string(key)}",')
+    lines.append(']')
+    lines.append('')
+    path.write_text('\n'.join(lines))
+
+
+def auto_sort_sources() -> None:
+    write_sorted_dict_file(DEOBFUSCATED_FILE, 'keys', keys)
+    write_sorted_dict_file(DEOBFUSCATED_LEGACY_FILE, 'keys_legacy', keys_legacy)
+    write_sorted_keys_desc(KEYS_DESC_FILE)
 
 
 def load_hash_set(path: Path) -> set[str]:
@@ -287,6 +349,8 @@ def generate_mapping(
         out.write('    NULL, NULL\n};\n')
 
 if __name__ == '__main__':
+    auto_sort_sources()
+
     generate_mapping(HASHES_FILE, MAPPING_FILE, TABLE_NAME, False, keys, add_version=True)
     generate_mapping(HASHES_FILE, MAPPING_GESTALT_FILE, TABLE_NAME, True, keys, add_version=True)
     generate_mapping(HASHES_LEGACY_FILE, MAPPING_LEGACY_FILE, TABLE_LEGACY_NAME, False, keys_legacy, add_version=True)
