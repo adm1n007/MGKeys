@@ -1,7 +1,7 @@
 #include "struct.h"
 
 // Total: 1190 keys
-// Deobfuscated: 1169 keys (98.24%)
+// Deobfuscated: 1171 keys (98.4%)
 // Total gestalt keys: 916 keys
 // Deobfuscated gestalt: 916 keys (100.0%)
 // Unexplored: 0 keys
@@ -297,7 +297,7 @@ static const struct tKeyMapping keyMappingTable[] = {
     "bUJD9zcOcitJwFA0ieIkxA", "DeviceBackGlassMaterial", // iOS 10.0+
     "bwLsbkp4shhHuNB5VpRa8w", "YonkersUID", // iOS 12.0+
     "BWoQXWXYITrPRpFyc9xTLw", "DeviceSupportsUSBTypeC", // iOS 12.1+
-    "bxQyyA/qJ3QQXTiHBsW2eg", NULL, // non-gestalt-key, IODeviceTree:/product, starts with o, BuddyLanguagesAnimationRequiresOptimization, iOS 7.0+
+    "bxQyyA/qJ3QQXTiHBsW2eg", "optimize-buddy-animation", // non-gestalt-key // iOS 7.0+
     "byGRtH44VNik9CzN/QKLCw", "nfc", // iOS 11.0+
     "bysMryc4yLwQjKvUQGGXXQ", "DevicePrefersProceduralAntiAliasing", // iOS 7.0+
     "BYYil6kIk8Hm5lRuA1k8Tw", "prox-sensor", // non-gestalt-key // iOS 7.0+
@@ -370,7 +370,7 @@ static const struct tKeyMapping keyMappingTable[] = {
     "e+pTfaabi1k1kfdk2vl1Kw", "luna-serial-number", // non-gestalt-key // iOS 11.0+
     "e0HV2blYUDBk/MsMEQACNA", "DeviceSupportsBreathingDisturbancesMeasurements", // iOS 18.0+
     "E0wrprlNya8gngoVpPXj2w", "DeviceSupportsCorrectedTemperature", // iOS 16.0+
-    "E3qwwdwgUSy6FV6VC+Uf3A", NULL, // non-gestalt-key, IODeviceTree:/chosen, starts with r, ResearchFuse, iOS 14.0+
+    "E3qwwdwgUSy6FV6VC+Uf3A", "research-enabled", // non-gestalt-key // iOS 14.0+
     "E4vGMChwcVRKD8hMVxnRvg", "DeviceSupportsUSLegallyCompliantBloodOxygen", // iOS 18.7+
     "e4ZSDal1Fg7QfCA7rlNmSQ", "DeviceSupportsLiveActivities", // iOS 18.0+
     "e8KVLQDfW5n4LxdE3N84Xw", "DeviceSupportsCyclingAutoStartReminders", // iOS 15.0+
