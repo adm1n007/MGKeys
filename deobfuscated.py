@@ -110,6 +110,7 @@ keys = {
     "4eFYRO4KDf8py/Zf3iHWZw": "speaker-thiele-small",
     "4fh9efw4o1yaFqkXNCXoeA": "DeviceSupportsHypertensivePatternMeasurements",
     "4fT83+9coO3VAUnlxuOOcw": "SupportsEDUMU",
+    "4H26SkyfcrZOrMAtjC6Cfw": "supports-hypertension-pattern",
     "4I0hOaR3n80379Vka7u+Xg": "volume-buttons",
     "4JalTKSe5a9I+mb00ATvag": "display-boot-rotation",
     "4Jfu4lqX8dzru4Z+ONQ1rQ": "PhotosPostEffectsCapability",

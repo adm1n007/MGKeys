@@ -1,7 +1,7 @@
 #include "struct.h"
 
 // Total: 1190 keys
-// Deobfuscated: 1171 keys (98.4%)
+// Deobfuscated: 1172 keys (98.49%)
 // Total gestalt keys: 916 keys
 // Deobfuscated gestalt: 916 keys (100.0%)
 // Unexplored: 0 keys
@@ -118,7 +118,7 @@ static const struct tKeyMapping keyMappingTable[] = {
     "4eFYRO4KDf8py/Zf3iHWZw", "speaker-thiele-small", // non-gestalt-key // iOS 12.0+
     "4fh9efw4o1yaFqkXNCXoeA", "DeviceSupportsHypertensivePatternMeasurements", // iOS 26.0+
     "4fT83+9coO3VAUnlxuOOcw", "SupportsEDUMU", // iOS 9.3+
-    "4H26SkyfcrZOrMAtjC6Cfw", NULL, // non-gestalt-key, IODeviceTree:/product, starts with s, DeviceSupportsHypertensivePatternMeasurements, iOS 26.0+
+    "4H26SkyfcrZOrMAtjC6Cfw", "supports-hypertension-pattern", // non-gestalt-key // iOS 26.0+
     "4I0hOaR3n80379Vka7u+Xg", "volume-buttons", // iOS 7.0+
     "4JalTKSe5a9I+mb00ATvag", "display-boot-rotation", // non-gestalt-key // iOS 13.5+
     "4Jfu4lqX8dzru4Z+ONQ1rQ", "PhotosPostEffectsCapability", // iOS 7.0+

@@ -1,7 +1,6 @@
 NON_KEY_DESC = 'non-gestalt-key'
 
 unknown_keys_desc = {
-    "4H26SkyfcrZOrMAtjC6Cfw": "IODeviceTree:/product, starts with s, DeviceSupportsHypertensivePatternMeasurements",
     "4MI3+6oztazPJ1ZI2OdWDQ": "",
     "9f5ODNAt2gufqSI82eYnLw": "IODeviceTree:/multi-touch, starts with c, DeviceSupportsCorrectedTemperature",
     "9icU1F9BQ/2S0k7pXM668g": "IOServiceTree:/, starts with A",
@@ -64,6 +63,7 @@ known_keys_desc = [
     "3uw7204ET4Vk1Cl4iJiNqQ",
     "4+ntrbAfaq8rQKPfQo16CQ",
     "4eFYRO4KDf8py/Zf3iHWZw",
+    "4H26SkyfcrZOrMAtjC6Cfw",
     "4JalTKSe5a9I+mb00ATvag",
     "4k6Wv56SWfITjzet+hIHMQ",
     "4KHWgupf+YDEaYOgLaS04g",
