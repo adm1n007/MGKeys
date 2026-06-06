@@ -1,7 +1,7 @@
 #include "struct.h"
 
 // Total: 201 keys
-// Deobfuscated: 184 keys (91.54%)
+// Deobfuscated: 186 keys (92.54%)
 // Total gestalt keys: 169 keys
 // Deobfuscated gestalt: 164 keys (97.04%)
 // Unexplored: 5 keys
@@ -32,7 +32,7 @@ static const struct tKeyMapping keyMappingTableLegacy[] = {
     "4MI3+6oztazPJ1ZI2OdWDQ", NULL, // non-gestalt-key, , iOS 8.3+ (removed in 10.0)
     "4TKtw5gG9r8CE3BlOrjLhg", "UnifiedIPodCapability", // Simulator
     "59MRw0x/zCNPzV6/uGS8cg", "PiezoClickerCapability", // Simulator
-    "5JleoNS+AEM3ev96t8z0Qw", NULL, // non-gestalt-key, IOService:/, starts with A, iOS 9.0+ (removed in 10.0)
+    "5JleoNS+AEM3ev96t8z0Qw", "AppleSPUHIDDriver", // non-gestalt-key // iOS 9.0+ (removed in 10.0)
     "5Xri+ec5Inj/4XBalFenVQ", "MainScreenPitch", // Simulator
     "61o7Kdx4PeNILOhWfiXBtA", "h264-playback-level", // non-gestalt-key // iOS 7.0+ (removed in 9.0)
     "7NoMrNekLOY0QTFFKY3MUg", "RegionSupportsCinnamon", // iOS 12.1+ (removed in 17.0)
@@ -113,7 +113,7 @@ static const struct tKeyMapping keyMappingTableLegacy[] = {
     "KRT2emT8tNPMW9VUsXwT1A", NULL, // non-gestalt-key, , iOS 7.0+ (removed in 10.0)
     "kTX3vfIkwQHB9e90qFxlDg", "PhotoStreamCapability", // Simulator
     "KXulcwjWtgzrg+u8qILKBQ", "LocationServicesCapability", // Simulator
-    "kZxeKVJr1te4KIfsML7vXw", NULL, // non-gestalt-key, , iOS 8.0+ (removed in 10.0)
+    "kZxeKVJr1te4KIfsML7vXw", "main-screen-canvas-sizes", // non-gestalt-key // iOS 8.0+ (removed in 10.0)
     "L8PQcP8OFWzr3NCfs1QrrQ", NULL, // non-gestalt-key, IODeviceTree:/product/audio, starts with s, 061e/gd5kFdZwwe1G2qXFQ, iOS 13.0+ (removed in 14.0)
     "ld2eewXs5StVwdRtwYT8sw", "PersonalHotspotCapability", // Simulator
     "ldJQht23DQY8SUXKJhUvPw", "use-syncdbv", // non-gestalt-key // iOS 16.0+ (removed in 26.4)
