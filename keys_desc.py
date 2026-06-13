@@ -25,7 +25,6 @@ unknown_keys_desc = {
     "vf61bz2yUWqBb+jD25ZK+w": "IODeviceTree:/product, starts with s, SoCSKU",
     "Vn4SAODWQXeOOIVBe8CXTg": "",
     "wAbB2fAjUqUc6lNBelfWMA": "IODeviceTree:/product, starts with n, DeviceSupportsPeriodicALSUpdates",
-    "zgtZIGG9jkHrBSZYHkVBtg": "IODeviceTree:/product, starts with a, DeviceDisablesAODByDefault",
 }
 
 known_keys_desc = [
@@ -305,6 +304,7 @@ known_keys_desc = [
     "ZcPQWuQwUJtMR5Oj99uc8w",
     "zDBaE8nqtDP8hY4pOa6iMw",
     "Zg7DduDoSCy6vY6mhy3n2w",
+    "zgtZIGG9jkHrBSZYHkVBtg",
     "Zhoou87qmFpFwcFsm7Jlyg",
     "zJUWenIp94snlzBD1cub3g",
     "znvmheFkjr6hiqIK9TrCVw",

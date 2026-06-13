@@ -1,7 +1,7 @@
 #include "struct.h"
 
 // Total: 1190 keys
-// Deobfuscated: 1175 keys (98.74%)
+// Deobfuscated: 1176 keys (98.82%)
 // Total gestalt keys: 916 keys
 // Deobfuscated gestalt: 916 keys (100.0%)
 // Unexplored: 0 keys
@@ -1185,7 +1185,7 @@ static const struct tKeyMapping keyMappingTable[] = {
     "Zg7DduDoSCy6vY6mhy3n2w", "island-notch-location", // non-gestalt-key // iOS 17.4+
     "ZgIjA7Nwd2jSo13lhDO1Iw", "RegionalBehaviorShutterClick", // iOS 7.0+
     "ZGraRMW0TsxCvONeeJ5C2w", "HWModelDescriptionForUserVisibility", // iOS 26.0+
-    "zgtZIGG9jkHrBSZYHkVBtg", NULL, // non-gestalt-key, IODeviceTree:/product, starts with a, DeviceDisablesAODByDefault, iOS 26.0+
+    "zgtZIGG9jkHrBSZYHkVBtg", "aod-default-disable", // non-gestalt-key // iOS 26.0+
     "zHeENZu+wbg7PUprwNwBWg", "RegionInfo", // iOS 7.0+
     "Zhoou87qmFpFwcFsm7Jlyg", "vsh-compensation-minimum-nits", // non-gestalt-key // iOS 16.0+
     "ZiSlYxYSkyaYImU3lrSXWw", "gps", // iOS 7.0+
