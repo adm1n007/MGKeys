@@ -1,7 +1,7 @@
 #include "struct.h"
 
 // Total: 1190 keys
-// Deobfuscated: 1172 keys (98.49%)
+// Deobfuscated: 1175 keys (98.74%)
 // Total gestalt keys: 916 keys
 // Deobfuscated gestalt: 916 keys (100.0%)
 // Unexplored: 0 keys
@@ -337,7 +337,7 @@ static const struct tKeyMapping keyMappingTable[] = {
     "CzGP5+8jQECJMH4h+z4TYA", "offline-dictation", // iOS 7.0+
     "D0cJ8r7U5zve6uA6QbOiLA", "ModelNumber", // iOS 7.0+
     "d27R2IjPvpwp+MX/kUbJ2w", "PintoMacAddress", // iOS 7.0+
-    "D3LeXyjrxDFYSi6pWFEL4A", NULL, // non-gestalt-key, IODeviceTree:/product, starts with u, DeviceSupportsTrafficAlpha, iOS 7.0+
+    "D3LeXyjrxDFYSi6pWFEL4A", "ui-traffic-no-alpha", // non-gestalt-key // iOS 7.0+
     "D4AU4tOIuGKN3G/uix65cQ", "RegionalBehaviorAll", // iOS 7.0+
     "D6/BMDrlb8V3WSiqL8gL+w", "DeviceSupportsBatteryModuleAuthentication", // iOS 12.0+
     "D6PT05dEJ0f9Ayk7Yi92RA", "front-max-video-fps-1080p", // non-gestalt-key // iOS 10.0+
@@ -572,7 +572,7 @@ static const struct tKeyMapping keyMappingTable[] = {
     "J1QHVh74Nnd6Rqyiq71/yw", "AVDDecodingRate", // iOS 16.0+
     "j39y4QUrP6cvZY8Pjyv64w", "PearlMotionDetectionCapability", // iOS 17.0+
     "j4dedPnpeXouudM1+j3dsQ", "IntegratedCircuitCardIdentifier", // iOS 7.0+
-    "j5MYSRG6J/NkDdtOKpt6zg", NULL, // non-gestalt-key, IODeviceTree:/product, starts with N, FanCount, iOS 26.4+
+    "j5MYSRG6J/NkDdtOKpt6zg", "NumOfFans", // non-gestalt-key // iOS 26.4+
     "j8/Omm6s1lsmTDFsXjsBfA", "DeviceSupportsAlwaysOnTime", // iOS 13.0+
     "J912s3mVzhReVtPv4HwqNQ", "FaceTimeCameraRequiresFastSwitchOptions", // iOS 7.0+
     "j9Th5smJpdztHwc+i39zIg", "MarketingProductName", // iOS 9.1+
@@ -796,7 +796,7 @@ static const struct tKeyMapping keyMappingTable[] = {
     "og9DE42ZUHzzTiVpxwOmqw", "UnifiedGamingPerfLeveliPadTier1", // iOS 26.0+
     "ohnQBWkVQf2nu9Vr/9uLug", "DeviceSupports3DImagery", // iOS 7.0+
     "OHXV8ldryg9nrOCapcyDCQ", "ReceiveARCStreamOverAirPlayCapability", // iOS 15.0+
-    "OImuoRzP9vclh3eYueyRDg", NULL, // non-gestalt-key, IODeviceTree:/product, starts with N, USBPortCount, iOS 26.4+
+    "OImuoRzP9vclh3eYueyRDg", "NumOfUSBPorts", // non-gestalt-key // iOS 26.4+
     "oJGeec0N+MudCr0LsdtbHw", "MobileSubscriberNetworkCode", // iOS 7.0+
     "Oji6HRoPi7rH7HPdWVakuw", "HasInternalSettingsBundle", // iOS 7.0+
     "OJTdSHEAfpOvV6m6o+Ou1w", "moment-capture", // non-gestalt-key // iOS 13.4+
