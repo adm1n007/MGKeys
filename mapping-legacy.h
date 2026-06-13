@@ -146,7 +146,7 @@ static const struct tKeyMapping keyMappingTableLegacy[] = {
     "pFXE4P/EKSiY0vBWvtT/HA", "HasAllFeaturesCapability", // Simulator
     "pKT0lcBNzQ676fjvMAbu6Q", "ProximitySensorCapability", // Simulator
     "po+GVxlZvPQi8BE6RHBDHQ", "DisplayPortCapability", // Simulator
-    "pQ60lr9FHtEUdZFqLI0C+g", NULL, // non-gestalt-key, IOService:/5JleoNS+AEM3ev96t8z0Qw, starts with S, iOS 9.0+ (removed in 10.0)
+    "pQ60lr9FHtEUdZFqLI0C+g", NULL, // non-gestalt-key, IOService:/AppleSPUHIDDriver, starts with S, iOS 9.0+ (removed in 10.0)
     "PUbhrnwCUBxJ2bxlZeKscg", "VeniceCapability", // Simulator
     "PUY/n3uJEk8GSE+RjkHHAA", "video-cap", // iOS 7.0+ (removed in 14.0)
     "QAL4CoosdFzdrO2SMJflLQ", "GreenTeaDeviceCapability", // Simulator
